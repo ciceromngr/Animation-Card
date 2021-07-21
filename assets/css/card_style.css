@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 100em;
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: aliceblue;
+}
+
+.card {
+    position: relative;
+    min-height: 80vh;
+    width: 25rem;
+    background: lightcoral;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 
+        0 20px 20px rgba(0,0,0,0.2), 
+        0 0 40px rgba(0,0,0,0.2);
+        transition: all .3s ease-out;
+        transform-style: preserve-3d;
+}
+
+.food {
+    min-height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food img {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 1%;
+    z-index: 2;
+    transition: all 0.75s ease-out;
+    transform: translateZ(180px);
+    transform-style: preserve-3d;
+}
+
+.circle {
+    width: 11rem;
+    height: 11rem;
+    background: rgba(0,0,0,0.2);
+    position: absolute; 
+
+    top: 2.5em;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.info h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.75s ease-out;
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 1.2rem;
+    padding: 2rem 0;
+    color: #e6e6b3;
+    font-weight: lighter;
+    transition: all 0.75s ease-out;
+
+    text-align: justify;
+}
+
+.prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-out;
+}
+
+.prices button {
+    padding: 0.5rem 2rem;
+    background: none;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+.purchase {
+    transition: all 0.75s ease-out;
+}
+
+.purchase button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem 0;
+    border-radius: 0 30px 0 30px;
+    border: none;
+
+    width: 23%;
+    cursor: pointer;
+
+    background: #f5454288;
+    color: white;
+    font-weight: bold;
+    font-size: 1.225rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+    transition: all .3s ease-out;
+}
+.card:hover .purchase button {
+   animation: buttonPurchase 1s infinite linear;
+}
+
+.card .purchase button:hover {
+    animation: none;
+    background: #ec3d3a;
+}
+
+@keyframes buttonPurchase {
+    0% {
+        background-color: #f5454288;
+    }
+
+    50% {
+        background: #ec3d3a;
+    }
+}
